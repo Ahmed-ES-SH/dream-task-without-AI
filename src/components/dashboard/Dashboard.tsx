@@ -7,7 +7,7 @@ export default function Dashboard() {
   if (!user) return;
 
   return (
-    <div className="flex  flex-1/2 min-h-screen  items-center justify-center bg-background p-5">
+    <div className="flex z-1  flex-1/2 min-h-screen  items-center justify-center bg-background p-5">
       <div className="rounded-xl border border-border/60 bg-card/95 p-4 shadow-sm backdrop-blur-sm">
         <div className="flex max-md:flex-col max-md:items-start w-full max-w-md items-center gap-4 rounded-xl border border-border/60 bg-card/95 p-4 shadow-sm backdrop-blur-sm">
           <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted ring-2 ring-border">

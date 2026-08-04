@@ -39,7 +39,7 @@ export default function UserButton() {
   return (
     <div
       onClick={() => setOpenMenu(!openMenu)}
-      className="w-9 h-9 relative cursor-pointer flex items-center justify-center  rounded-full border border-gray-300 shadow-md"
+      className="w-9 h-9 z-99  relative cursor-pointer flex items-center justify-center  rounded-full border border-gray-300 shadow-md"
     >
       {user.avatar_url ? (
         <img
@@ -55,7 +55,7 @@ export default function UserButton() {
 
       {/* menu */}
       {openMenu && (
-        <div className="w-32 h-fit  rounded-md bg-primary text-white dark:text-black absolute top-full mt-2 left-0">
+        <div className="w-32 h-16  rounded-md bg-primary text-white dark:text-black z-99 absolute top-full mt-2 left-0">
           <div className="flex flex-col items-start gap-2 p-2">
             <LocaleLink className="hover:ml-1 duration-300" to="/dashboard">
               Dashboard
