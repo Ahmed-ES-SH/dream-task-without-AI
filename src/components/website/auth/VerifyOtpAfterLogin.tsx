@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/input-otp";
 import { Button } from "@base-ui/react/button";
 import { Loader } from "lucide-react";
-import type { Dispatch, SetStateAction } from "react";
+import { useEffect, type Dispatch, type SetStateAction } from "react";
 
 interface VerifyOtpAfterLoginProps {
   otp: string;
@@ -21,6 +21,12 @@ export default function VerifyOtpAfterLogin({
   isLoading,
   onSubmit,
 }: VerifyOtpAfterLoginProps) {
+  useEffect(() => {
+    if (otp.length == 6) {
+      onSubmit();
+    }
+  }, [otp]);
+
   return (
     <>
       <CardContent className="flex justify-center">
@@ -57,9 +63,10 @@ export default function VerifyOtpAfterLogin({
       <CardFooter className="bg-transparent">
         <Button
           className={
-            "bg-primary p-2 text-white dark:text-black ml-auto rounded-md px-4"
+            "bg-primary p-2 text-white flex items-center gap-1 dark:text-black ml-auto rounded-md px-4"
           }
           onClick={onSubmit}
+          disabled={otp.length != 6}
           type="submit"
         >
           {isLoading && <Loader className="animate-spin" />}
